@@ -1,17 +1,17 @@
 import type { NextPage } from 'next'
 
 import Layout from '../components/layout/Layout'
-import { navigation } from '../config'
+import navigation from '../config/navigation'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Shop: NextPage = () => {
   return (
-    <Layout activeLink={navigation.home.link}>
+    <Layout activeLink={navigation.shop.link}>
       <div >
-        <h1 className={styles.title}>Home</h1>
+        <h1 className={styles.title}>Shop</h1>
 
         <p>
-          home content
+          shop content
         </p>
 
       </div>
@@ -19,4 +19,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Shop
