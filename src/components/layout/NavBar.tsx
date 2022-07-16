@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
-import styles from '../../styles/NavBar.module.css'
-import { navigation } from '../../config'
-import { normalizeConfig } from 'next/dist/server/config-shared'
+import styles from '../../../styles/NavBar.module.css'
+import { navigation } from '../../../config'
 import Link from 'next/link'
 
 interface NavBarProps {

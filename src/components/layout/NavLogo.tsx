@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
-import styles from '../../styles/Layout.module.css'
-import { navigation } from '../../config'
+import styles from '../../../styles/Layout.module.css'
 
 interface NavLogoProps {
 }

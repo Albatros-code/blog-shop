@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import styles from '../../styles/Layout.module.css'
+import styles from '../../../styles/Layout.module.css'
 import Head from 'next/head'
 import NavBar from './NavBar'
 import NavLogo from './NavLogo'

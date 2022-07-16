@@ -15,6 +15,10 @@ const navigation = {
     shop: {
         title: 'Shop',
         link: '/shop',
+    } as NavigationEntry,
+    login: {
+        title: 'Login',
+        link: '/login',
     } as NavigationEntry
 }
 
