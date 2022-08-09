@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tagContainer {
+    border: 1px solid var(--col-primary);
+    border-radius: .4rem;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.tagContainer:hover {
+    border: 1px solid var(--col-secondary);
+    cursor: pointer;
+}

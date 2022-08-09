@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    /* background-color: lightgray; */
+}
+
+.title {
+    font-size: 1.2rem;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: var(--col-textSecondary);
+    margin-bottom: 0.5rem;
+}
+
+.image {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-weight: 300;
+}
+
+.button {
+    align-self: flex-end;
+}
+
+.button:hover {
+    color: var(--col-secondary)
+}

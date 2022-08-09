@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input {
+    background-color: white;
+    border: 1px solid var(--col-lightgray);
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: all;
+    transition-duration: 300ms;
+}
+
+.input.right {
+    text-align: end;
+}
+
+.input:hover,
+.input:focus,
+.input:active {
+    border-color: var(--col-secondary);
+    outline: none;
+}
+
+.input.disabled {
+    background-color: var(--col-lightgray);
+    color: rgb(0, 0, 0, 0.2);
+    cursor: default;
+}
+
+.label {
+    font-size: 0.7rem;
+    color: var(--col-textSecondary);
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+.error {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--col-error)
+}

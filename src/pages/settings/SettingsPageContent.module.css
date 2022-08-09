@@ -1,0 +1,13 @@
+.themeSettingItem {
+  display: flex;
+  align-items: center;
+}
+
+.themeSettingItemTitle {
+  margin-right: 16px;
+}
+
+.selectOption {
+  width: 100px;
+  text-align: right;
+}

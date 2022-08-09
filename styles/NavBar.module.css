@@ -12,5 +12,5 @@
 }
 
 .navLinkActive {
-  color: purple;
+  color: var(--col-secondary);
 }

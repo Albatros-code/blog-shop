@@ -8,9 +8,9 @@ const client = (space && accessToken) && createClient({
   accessToken: accessToken,
 })
 
-export async function fetchEntries(query?: any) {
+export async function fetchEntries<T = any>(query?: any) {
     if (!client) return undefined 
-    const entries = await client.getEntries(query)
+    const entries = await client.getEntries<T>(query)
     if (entries.items) return entries.items
 }
 

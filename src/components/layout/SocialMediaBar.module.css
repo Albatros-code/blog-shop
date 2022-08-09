@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+    /* flex-direction: column; */
+}
+
+.container p {
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+
+.container * {
+    margin-right: 0.5rem;
+}
+
+.container *:last-child {
+    margin-right: 0;
+}
+
+.button {
+    font-size: 24px;
+}
+
+.button:hover {
+    color: var(--col-secondary);
+    cursor: pointer;
+}

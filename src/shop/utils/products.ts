@@ -3,7 +3,7 @@ import axios from './shopApi'
 const getProducts = async () => {
     const res = await axios.get("products")
 
-    const products = await await Promise.all(res.data.data.map(async (el) => {
+    const products = await await Promise.all(res.data.data.map(async (el: any) => {
         const price = await axios.get(`prices/${el.default_price}`)
         return ({
             id: el.id,
@@ -21,7 +21,7 @@ const getProducts = async () => {
     return products
 }
 
-let instance
+let instance: any
 let semaphore = false;
 const getInstance = async () => {
     if (!instance && !semaphore) {

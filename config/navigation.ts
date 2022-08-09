@@ -3,23 +3,27 @@ interface NavigationEntry {
     link: string
 }
 
-const navigation = {
+const navigation: Record<string, NavigationEntry> = {
     home: {
         title: 'Home',
         link: '/',
-    } as NavigationEntry,
+    },
     blog: {
         title: 'Blog',
         link: '/blog',
-    } as NavigationEntry,
+    },
     shop: {
         title: 'Shop',
         link: '/shop',
-    } as NavigationEntry,
+    },
     login: {
         title: 'Login',
         link: '/login',
-    } as NavigationEntry
+    },
+    settings: {
+        title: 'Settings',
+        link: '/settings',
+    },
 }
 
 export default navigation

@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightgray; */
+}
+
+.container h2 {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.image {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 100%;
+    background-position: center;
+    background-size: cover;
+}

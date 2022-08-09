@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import Layout from '../src/components/layout/Layout'
 import navigation from '../config/navigation'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 const Login: NextPage = () => {
   return (

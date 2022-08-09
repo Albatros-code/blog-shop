@@ -1,38 +1,44 @@
 import React, { ReactNode } from 'react'
-import styles from '../../../styles/Layout.module.css'
+import styles from './Layout.module.css'
 import Head from 'next/head'
 import NavBar from './NavBar'
 import NavLogo from './NavLogo'
+import Link from 'next/link'
+import { navigation } from '../../../config'
+import SocialMediaBar from './SocialMediaBar'
+import clsx from 'clsx'
 
 interface LayoutProps {
     children: ReactNode
     activeLink?: string
+    bgImage?: string
 }
-const Layout = (props: LayoutProps) => {
-    const { activeLink = '-' } = props
+const Layout = ({
+    children,
+    activeLink = '-',
+    bgImage
+}: LayoutProps) => {
 
     return (
-    <div className={styles.mainContainer}>
-        <Head>
-            <title>Blog with shop</title>
-            <meta name="description" content="Blog and shop" />
-            {/* <link rel="icon" href="/favicon.ico" /> */}
-            <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.95em%22 font-size=%2280%22>🐱</text></svg>" />
-        </Head>
-        <div className={styles.headerContainer}>
-            <div className={styles.headerContainerInner}>
-                <NavLogo />
-                <NavBar activeLink={activeLink}/>
+        <>
+            <div className={clsx(styles.backgroundContainer)} style={{backgroundImage: `url(${bgImage})`}}/>
+            <div className={styles.mainContainer}>
+                <div className={clsx(styles.headerContainer)}>
+                    <div className={clsx(styles.headerContainerBg, bgImage && styles.headerContainerImgBg)}/>
+                    <div className={styles.headerContainerInner}>
+                        <Link href={navigation.home.link}><a><NavLogo /></a></Link>
+                        <NavBar activeLink={activeLink}/>
+                        <SocialMediaBar />
+                    </div>
+                </div>
+                <div className={styles.contentContainer}>
+                    {children}
+                </div>
+                <div className={clsx(styles.footerContainer, bgImage && styles.footerContainerImgBg)}>
+                    © albatros.code@gmail.com 🚀
+                </div>
             </div>
-        </div>
-        <div className={styles.contentContainer}>
-            {props.children}
-
-        </div>
-        <div className={styles.footerContainer}>
-            Footer
-        </div>
-    </div>
+        </>
     )
 }
 

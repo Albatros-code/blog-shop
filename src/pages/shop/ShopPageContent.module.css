@@ -1,0 +1,21 @@
+.itemsContainer {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.cartButtonBadge {
+  background-color: var(--col-secondary);
+  height: 1rem;
+  min-width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -0.2rem;
+  bottom: -0.2rem;
+  border-radius: 0.5rem;
+  padding: 0 0.2rem;
+  color: white;
+  font-size: 0.8rem;
+}

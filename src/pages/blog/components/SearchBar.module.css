@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input {
+    margin: 0;
+    height: 2rem;
+}
+
+.button {
+    margin: 0 0.5rem;
+    flex: 0 0 min-content
+}

@@ -1,0 +1,38 @@
+.container {
+    height: 2rem;
+    min-width: 2rem;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerPrimary {
+    background-color: var(--col-primary);
+}
+
+.containerSecondary {
+    background-color: transparent;
+    border: 1px solid var(--col-lightgray);
+}
+
+.container:hover {
+    color: var(--col-secondary);
+}
+
+.container.disabled {
+    background-color: var(--col-lightgray);
+    color: rgb(0, 0, 0, 0.2);
+    cursor: default;
+}
+
+.iconBase {
+    height: min-content;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}

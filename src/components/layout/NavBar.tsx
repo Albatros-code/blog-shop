@@ -8,9 +8,10 @@ interface NavBarProps {
 }
 const NavBar = (props: NavBarProps) => {
     const { activeLink } = props
+    
     return (
         <div className={styles.navBarContainer}>
-        {Object.values(navigation).map(nav => {
+        {Object.values(navigation).filter(el => el.title !== 'Home').map(nav => {
             const isActive = activeLink === nav.link
             return (
                 <Link href={nav.link} key={nav.title}>

@@ -1,0 +1,40 @@
+.container {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(0, 0, 0, 0.04);
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.leftContainer {
+  display: flex;
+  gap: 1rem
+}
+
+.rightContainer {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 1rem
+}
+
+.title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.backButton {
+  cursor: pointer;
+}
+
+.backButton:hover {
+  color: var(--col-secondary);
+}
