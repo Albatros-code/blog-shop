@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+}
+
+.title {
+    font-size: 1.2rem;
+}
+
+.postDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+
+.date {
+    font-size: 0.8rem;
+    color: var(--col-textSecondary);
+    margin-right: 0.5rem;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+}
+
+.tag {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--col-textSecondary);
+    border: 1px solid var(--col-primary);
+    border-radius: 0.6rem;
+    margin-right: 0.5rem;
+    padding: 0 0.4rem;
+}
+
+.button {
+    align-self: flex-end;
+}
+
+.button:hover {
+    color: var(--col-secondary)
+}

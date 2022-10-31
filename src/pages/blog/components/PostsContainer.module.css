@@ -1,0 +1,24 @@
+.postsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.firstPage *:first-child {
+    grid-column: span 2;
+}
+
+.postsContainerFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: center;
+    width: 50%;
+
+}
+
+.paginationBar {
+    padding: 1rem;
+}

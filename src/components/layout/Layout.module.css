@@ -1,5 +1,5 @@
 .mainContainer {
-  height: 100vh;
+  min-height: 100vh;
   min-width: 900px;
   width: 100%;
   display: flex;
@@ -84,7 +84,7 @@
 
 .backgroundContainer {
   /* margin-top: 100px; */
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-color: white;
   background-position: center;

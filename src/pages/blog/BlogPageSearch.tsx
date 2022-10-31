@@ -1,23 +1,22 @@
 import React from 'react'
 import BlogWrapper, { BlogSideSectionDetails } from './components/BlogWrapper'
 import PostsContainer from './components/PostsContainer'
-import { BlogPost } from './types/blogTypes'
+import SearchContainer from './components/SearchContainer'
+import { BlogPost, BlogPostLight } from './types/blogTypes'
 
 interface BlogPageContentProps {
-    posts: BlogPost[]
-    numberOfPosts: number
+    posts: BlogPostLight[]
     sideSectionDetails: BlogSideSectionDetails
 }
 
 const BlogPageContent = ({
     posts,
     sideSectionDetails,
-    numberOfPosts,
 }: BlogPageContentProps) => {
   
   return (
     <BlogWrapper details={sideSectionDetails}>
-      <PostsContainer posts={posts} numberOfPosts={numberOfPosts}/>
+      <SearchContainer posts={posts} />
     </BlogWrapper>
   )
 }

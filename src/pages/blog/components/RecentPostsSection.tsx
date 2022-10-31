@@ -1,4 +1,5 @@
 import React from 'react'
+import { getDate } from '../../../utils/common/date'
 import { BlogPost } from '../types/blogTypes'
 import styles from './RecentPostsSection.module.css'
 
@@ -9,6 +10,7 @@ interface RecentPostsSectionProps {
 const RecentPostsSection = ({
     posts
 }: RecentPostsSectionProps) => {
+
   return (
     <div className={styles.container}>
         {posts.map(post => 
@@ -18,7 +20,7 @@ const RecentPostsSection = ({
                 </div>    
                 <div>
                     <p className={styles.title}>{post.title}</p>
-                    <p className={styles.subtitle}>{new Date(post.date).toLocaleDateString()}</p>
+                    <p className={styles.subtitle}>{getDate(new Date(post.date))}</p>
                 </div>
 
             </div>

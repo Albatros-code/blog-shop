@@ -5,11 +5,9 @@ const SocialMediaBar = () => {
   return (
     <div className={styles.container}>
         <p>Check me on:</p>
-        {/* <div> */}
-            {["fa-brands fa-facebook", "fa-brands fa-instagram", "fa-brands fa-tiktok", "fa-brands fa-twitter"].map(el => 
-                <button key={el} className={styles.button}><i className={el} /></button>
-            )}
-        {/* </div> */}
+          {["fa-brands fa-facebook", "fa-brands fa-instagram", "fa-brands fa-tiktok", "fa-brands fa-twitter"].map(el => 
+              <button key={el} className={styles.button}><i className={el} /></button>
+          )}
     </div>
   )
 }

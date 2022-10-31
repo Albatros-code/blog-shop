@@ -11,6 +11,7 @@ interface ButtonProps {
     className?: string
     disabled?: boolean
     variant?: 'primary' | 'secondary'
+    onKeyPress?: React.KeyboardEventHandler<HTMLButtonElement>
 }
 
 const variantStyle = {
@@ -22,15 +23,16 @@ const variantStyle = {
   },
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button({
     children,
     variant = 'primary',
     href,
     onClick,
+    onKeyPress,
     icon,
     className,
     disabled = false
-}, ref) => {
+}, ref){
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onClick && onClick(e)
@@ -41,7 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
 
   return (
     <Wrapper href={href}>
-      <button ref={ref} disabled={disabled} className={clsx(styles.container, variantStyle[variant].container, disabled && styles.disabled, className)} onClick={handleClick}>
+      <button onKeyPress={onKeyPress} ref={ref} disabled={disabled} className={clsx(styles.container, variantStyle[variant].container, disabled && styles.disabled, className)} onClick={handleClick}>
         {icon && <i className={clsx(icon, styles.iconBase, children && styles.icon)} />}
         {children}
       </button>

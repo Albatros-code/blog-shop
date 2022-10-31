@@ -1,33 +1,35 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Link from 'next/link'
 import React from 'react'
-import { navigation } from '../../../../../config'
-import Layout from '../../../../components/layout/Layout'
+import { getDate } from '../../../../utils/common/date'
+import BlogWrapper, { BlogSideSectionDetails } from '../../components/BlogWrapper'
 import { BlogPost } from '../../types/blogTypes'
 import styles from './BlogPostContent.module.css'
 
 interface BlogPostContent {
     post: BlogPost
+    sideSectionDetails: BlogSideSectionDetails
 }
 
 const BlogPostContent = ({
-    post
+    post,
+    sideSectionDetails,
 }: BlogPostContent) => {
+  const { title, content, date, description, image, tags} = post
   return (
-    <Layout activeLink={navigation.blog.link}>
-    <div >
-      <h1 className={styles.title}>{post.title}</h1>
-      <h3>{post.date.substring(0, 10)}</h3>
-      <div className="post">
-        <img width="500px" alt={post.image.description} src={`https:${post.image.url}`} />
-        <div className="text">
-          <div>
-            {documentToReactComponents(post.content)}
-          </div>
+    <BlogWrapper details={sideSectionDetails}>
+    <div className={styles.container}>
+      <h1 className={styles.header}>{title}</h1>
+      <div className={styles.postDetails}>
+        <span className={styles.date}>{getDate(new Date(date))}</span>
+        <span className={styles.date}>-</span>
+        <div className={styles.tags}>
+          {tags.map((tag => <span key={tag} className={styles.tag}>{tag}</span>))}
         </div>
       </div>
+      <div className={styles.image} style={{backgroundImage: `url("https:${image.url}")`}}/>
+      <div>{documentToReactComponents(content)}</div>
     </div>
-  </Layout>
+  </BlogWrapper>
   )
 }
 

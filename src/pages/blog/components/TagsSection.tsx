@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 import styles from './TagsSection.module.css'
 
@@ -8,9 +9,10 @@ interface TagsSectionProps {
 const TagsSection = ({
   tags
 }: TagsSectionProps) => {
+  const router = useRouter()
 
   const handleTagClick = (tag: TagsSectionProps['tags'][number]) => () => {
-    console.log(tag)
+    router.push(`/blog/search?tags=${tag}`)
   }
 
   return (

@@ -74,17 +74,26 @@ export interface BlogPostEntry {
     date: EntryFields.Date
     image: Asset
     content: Document
+    description: EntryFields.Text
+    tags: Array<EntryFields.Text>
 }
 
-export interface BlogPost {
+export type BlogPost = BlogPostBase & BlogPostContent
+export type BlogPostLight = BlogPostBase
+
+interface BlogPostBase {
     slug: string
     title: string
+    description: string
     date: string
+    tags: string[]
+}
+
+interface BlogPostContent {
     image: {
         title: string
-        description: string
+        description: string | null
         url: string
     }
-    // content: Document
     content: Document
 }

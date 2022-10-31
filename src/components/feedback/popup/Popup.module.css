@@ -14,11 +14,13 @@
 }
 
 .background {
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    inset: 0;
     background: rgb(0, 0, 0, 0.2);
 }
 
 .popupContainer {
-    /* background-color: white; */
+    position: absolute;
+    top: 0
+        /* background-color: white; */
 }

@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input {
+    margin: 0;
+    width: 40px;
+}

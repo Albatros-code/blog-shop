@@ -14,4 +14,14 @@ export async function fetchEntries<T = any>(query?: any) {
     if (entries.items) return entries.items
 }
 
-export default { fetchEntries }
+export async function getContentType(id: string) {
+  if (!client) return undefined 
+  const contentType = await client.getContentType(id)
+  return contentType
+}
+
+export async function getContentfulAsset(id: string) {
+  if (!client) return undefined 
+  const asset = await client.getAsset(id)
+  return asset
+}

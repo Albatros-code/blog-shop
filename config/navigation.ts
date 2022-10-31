@@ -1,6 +1,7 @@
 interface NavigationEntry {
     title: string
     link: string
+
 }
 
 const navigation: Record<string, NavigationEntry> = {
@@ -8,22 +9,30 @@ const navigation: Record<string, NavigationEntry> = {
         title: 'Home',
         link: '/',
     },
+    about: {
+        title: 'About',
+        link: '/about',
+    },
     blog: {
         title: 'Blog',
-        link: '/blog',
+        link: '/blog/1',
     },
-    shop: {
-        title: 'Shop',
-        link: '/shop',
+    contact: {
+        title: 'Contact',
+        link: '/contact',
     },
-    login: {
-        title: 'Login',
-        link: '/login',
-    },
-    settings: {
-        title: 'Settings',
-        link: '/settings',
-    },
+    // shop: {
+    //     title: 'Shop',
+    //     link: '/shop',
+    // },
+    // login: {
+    //     title: 'Login',
+    //     link: '/login',
+    // },
+    // settings: {
+    //     title: 'Settings',
+    //     link: '/settings',
+    // },
 }
 
 export default navigation

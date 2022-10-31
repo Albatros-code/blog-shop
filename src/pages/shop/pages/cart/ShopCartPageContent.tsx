@@ -37,7 +37,7 @@ const ShopCartPageContent = ({
                 const product = products.find(el => el.id === id)
                 if (!product) return undefined
                 return (
-                        <ProductListItem product={product} quantity={qty} edit/>
+                        <ProductListItem key={product.id} product={product} quantity={qty} edit/>
                 )
             })}
             {Object.entries(cartProducts).length === 0 && <ProductListNoItems />}

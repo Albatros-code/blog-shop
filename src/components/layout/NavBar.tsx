@@ -14,7 +14,7 @@ const NavBar = (props: NavBarProps) => {
         {Object.values(navigation).filter(el => el.title !== 'Home').map(nav => {
             const isActive = activeLink === nav.link
             return (
-                <Link href={nav.link} key={nav.title}>
+                <Link href={nav.link} key={nav.title} scroll={false}>
                     <a className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}>{nav.title}</a>
                 </Link >
         )})}

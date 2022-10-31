@@ -17,6 +17,8 @@ interface TextInputProps {
   error?: string
   min?: number
   max?: number
+  onBlur?: (value: string) => void,
+  onKeyPress?: React.KeyboardEventHandler<HTMLInputElement>
 }
 
 const TextInput = ({
@@ -32,7 +34,9 @@ const TextInput = ({
     disabled = false,
     error,
     min,
-    max
+    max,
+    onBlur,
+    onKeyPress,
 }: TextInputProps) => {
 
   // const validateValue = React.useCallback((value: string) => {
@@ -67,12 +71,13 @@ const TextInput = ({
       e.target.value = min.toString()
       onChange && onChange(e)
     }
+    onBlur && onBlur(e.target.value)
   }
 
   return (
     <div className={clsx(styles.container, className)}>
       <label className={styles.label}>{label}</label>
-      <input onBlur={handleBlur} name={name} value={value} placeholder={placeholder} disabled={disabled} className={clsx(styles.input, disabled && styles.disabled, alignEnd && styles.right)} onChange={handleChange} />
+      <input onKeyPress={onKeyPress} onBlur={handleBlur} name={name} value={value} placeholder={placeholder} disabled={disabled} className={clsx(styles.input, disabled && styles.disabled, alignEnd && styles.right)} onChange={handleChange} />
       {/* {placeholder && <p className={styles.placeholder}>{placeholder}</p>} */}
       {error && <p className={styles.error}>error</p>}
     </div>      
