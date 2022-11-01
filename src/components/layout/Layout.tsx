@@ -26,7 +26,7 @@ const Layout = ({
                 <div className={clsx(styles.headerContainer)}>
                     <div className={clsx(styles.headerContainerBg, bgImage && styles.headerContainerImgBg)}/>
                     <div className={styles.headerContainerInner}>
-                        <Link href={navigation.home.link}><a><NavLogo /></a></Link>
+                        <NavLogo />
                         <NavBar activeLink={activeLink}/>
                         <SocialMediaBar />
                     </div>

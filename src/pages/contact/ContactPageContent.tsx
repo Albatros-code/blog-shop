@@ -11,6 +11,12 @@ interface ContactPageContentProps {
 
 const socialContactDetails = [
   {
+    icon: "fa-regular fa-envelope",
+    title: 'e-mail',
+    link: 'email@email.com',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut sagittis urna. Quisque convallis elementum eros porta elementum.' 
+  },
+  {
     icon: "fa-brands fa-facebook",
     title: 'Facebook',
     link: '@facebook_ID',
@@ -47,7 +53,7 @@ const ContactPageContent = ({
       <div className={styles.container}>
           <h1>Contact</h1>
           {socialContactDetails.map(item =>
-            <div className={styles.itemContainer}>
+            <div className={styles.itemContainer} key={item.title}>
               <header>
                 <button key={item.title} className={styles.button}><i className={item.icon} /></button>
                 <span>{item.title}</span>

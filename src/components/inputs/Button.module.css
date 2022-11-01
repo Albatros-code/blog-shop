@@ -19,6 +19,11 @@
     border: 1px solid var(--col-lightgray);
 }
 
+.containerPlain {
+    background-color: transparent;
+    border: none;
+}
+
 .container:hover {
     color: var(--col-secondary);
 }

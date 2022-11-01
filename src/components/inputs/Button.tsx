@@ -10,7 +10,7 @@ interface ButtonProps {
     onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
     className?: string
     disabled?: boolean
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'secondary' | 'plain'
     onKeyPress?: React.KeyboardEventHandler<HTMLButtonElement>
 }
 
@@ -20,6 +20,9 @@ const variantStyle = {
   },
   secondary: {
     container: styles.containerSecondary
+  },
+  plain: {
+    container: styles.containerPlain
   },
 }
 

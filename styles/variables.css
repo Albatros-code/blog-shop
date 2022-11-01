@@ -3,9 +3,14 @@
     --col-secondary: purple;
     --col-textSecondary: gray;
     --col-lightgray: lightgray;
+    --col-superlightgray: rgb(240, 240, 240);
 
     --col-success: #2e7d32;
     --col-error: #d32f2f;
 
-    --text-fontfamily: 'Roboto'
+    --text-fontfamily: 'Roboto';
+
+    --breakpoint-sm: 600px;
+    --breakpoint-md: 900px;
+    --breakpoint-lg: 1200px;
 }

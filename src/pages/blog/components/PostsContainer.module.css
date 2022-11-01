@@ -9,6 +9,16 @@
     grid-column: span 2;
 }
 
+@media screen and (max-width: 600px) {
+    .postsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .firstPage *:first-child {
+        grid-column: span 1;
+    }
+}
+
 .postsContainerFooter {
     display: flex;
     flex-direction: row;
@@ -17,6 +27,12 @@
     justify-content: center;
     width: 50%;
 
+}
+
+@media screen and (max-width: 600px) {
+    .postsContainerFooter {
+        width: 100%;
+    }
 }
 
 .paginationBar {

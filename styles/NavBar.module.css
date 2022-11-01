@@ -1,9 +1,16 @@
 .navBarContainer {
+  z-index: 500;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .navBarContainer {
+    /* max-width: 100px; */
+  }
 }
 
 .navLink {
@@ -13,4 +20,85 @@
 
 .navLinkActive {
   color: var(--col-secondary);
+}
+
+@media screen and (max-width: 600px) {
+  .screen {
+    display: none;
+  }
+}
+
+.mobile {
+  font-size: 30px;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.mobileMenuContainer {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 60px);
+  align-items: center;
+  overflow: hidden;
+}
+
+.mobileMenuContainerBackground {
+  background: rgba(256, 256, 256, 0.7);
+  inset: 0;
+  position: absolute;
+}
+
+.mobileMenuItems {
+  position: relative;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--col-primary);
+}
+
+.navLinkMobile {
+  background: white;
+  width: 100%;
+  text-align: center;
+}
+
+/* .navLinkMobile:hover {
+  background: var(--col-primary);
+} */
+
+.displayNone {
+  display: none;
+}
+
+.transition {
+  transition: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier();
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.drawerDown {
+  top: 0;
+}
+
+.drawerUp {
+  top: -50%;
 }

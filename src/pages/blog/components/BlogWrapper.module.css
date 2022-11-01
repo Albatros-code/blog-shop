@@ -4,6 +4,12 @@
     padding-top: 1rem
 }
 
+@media screen and (max-width: 600px) {
+    .pageSections {
+        grid-template-columns: auto;
+    }
+}
+
 .postsSection {
     display: flex;
     flex-direction: column;
@@ -12,7 +18,15 @@
 }
 
 .sideSection {
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem 0;
+}
+
+@media screen and (max-width: 600px) {
+    .sideSection {
+        background: var(--col-superlightgray);
+        border-top: 2px solid var(--col-secondary);
+        padding: 1rem 1rem 1rem 1rem;
+    }
 }
 
 .sideSection header {
