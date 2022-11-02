@@ -18,6 +18,13 @@
   padding: 2rem;
 }
 
+@media screen and (max-width: 600px) {
+  .navLink {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
 .navLinkActive {
   color: var(--col-secondary);
 }

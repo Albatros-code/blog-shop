@@ -5,6 +5,12 @@
     align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 1rem;
+    }
+}
+
 .container h1 {
     font-size: 2rem;
     font-weight: 500;
@@ -47,6 +53,7 @@
 .itemContainer header {
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 .itemContainer header>span {

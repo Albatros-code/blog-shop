@@ -17,3 +17,11 @@
     background-position: center;
     background-size: cover;
 }
+
+/* @media screen and (max-width: 600px) {
+    .image {
+        padding-top: 60%;
+        width: 60%;
+        margin: 0 auto;
+    }
+} */

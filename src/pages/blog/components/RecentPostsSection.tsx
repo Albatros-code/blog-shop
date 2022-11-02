@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { getDate } from '../../../utils/common/date'
 import { BlogPost } from '../types/blogTypes'
@@ -14,7 +15,8 @@ const RecentPostsSection = ({
   return (
     <div className={styles.container}>
         {posts.map(post => 
-            <div className={styles.listItem} key={post.slug}>
+        <Link href={`/blog/post/${post.slug}`} key={post.slug}>
+            <a className={styles.listItem}>
                 <div className={styles.image}>
                     <div style={{backgroundImage: `url(https:${post.image.url})`}}/>
                 </div>    
@@ -23,7 +25,8 @@ const RecentPostsSection = ({
                     <p className={styles.subtitle}>{getDate(new Date(post.date))}</p>
                 </div>
 
-            </div>
+            </a>
+        </Link>
         )}
     </div>
   )

@@ -17,6 +17,12 @@
     padding: 0 1rem;
 }
 
+@media screen and (max-width: 600px) {
+    .postsSection {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
 .sideSection {
     padding: 0 1rem 1rem 0;
 }
