@@ -1,23 +1,31 @@
 import fs from 'fs'
 import axios from 'axios'
 
-/* ============================================================
-  Function: Download Image
-============================================================ */
+const downloadImage = (url: string, imagepath: string, imageName: string) => {
+  const dotExtension = url.substring(url.lastIndexOf('.'), url.length)
+  const saveTo = (imagepath.endsWith('/') ? imagepath : imagepath + '/') + imageName + dotExtension
 
-const download_image = (url: string, image_path: string) =>
-  axios({
-    url,
-    responseType: 'stream',
-  }).then(
-    response =>
-      new Promise((resolve, reject) => {
-        console.log(process.cwd())
-        response.data
-          .pipe(fs.createWriteStream(image_path))
-          .on('finish', () => {resolve(null)})
-          .on('error', (e: any) => reject(e));
-      }),
-  );
+  if (!fs.existsSync(imagepath)) {
+    fs.mkdirSync(imagepath, { recursive: true })
+  }
 
-  export default download_image
+  return {
+    fileName: imageName + dotExtension,
+    localPath: saveTo.replace('./public',''),
+    promise: axios({
+      url,
+      responseType: 'stream'
+    }).then(
+      async response =>
+        await new Promise<string>((resolve, reject) => {
+          response.data
+            .pipe(fs.createWriteStream(saveTo))
+            .on('finish', () => { resolve(imageName + dotExtension) })
+            .on('error', (e: any) => reject(e))
+        })
+    )
+    .catch(e => Promise.reject(e))
+  }
+}
+
+export default downloadImage

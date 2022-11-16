@@ -1,4 +1,5 @@
 import navigation from './navigation'
-import { config as blog } from './blog'
+import blog from './blog'
+import base from './base'
 
-export { navigation, blog }
+export { navigation, blog, base }

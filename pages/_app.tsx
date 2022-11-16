@@ -11,6 +11,7 @@ import { ThemeConfig, ThemeProvider } from '../src/utils/theme/Theme'
 import Head from 'next/head'
 import { ShopContextProvider } from '../src/pages/shop/utils/shopContext'
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   
   const theme: ThemeConfig = {

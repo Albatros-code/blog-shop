@@ -16,7 +16,7 @@ const BlogPostCard = ({
   
   return (
     <div className={styles.container}>
-        <div style={{backgroundImage: `url(https:${post.image.url})`}} className={styles.image}/>
+        <div style={{backgroundImage: `url(${post.image.url})`}} className={styles.image}/>
         <span className={styles.title}>{post.title}</span>
         <span className={styles.subtitle}>{(new Date(post.date)).toLocaleDateString("pl-PL")}</span>
         <p className={styles.description}>{post.description}</p>

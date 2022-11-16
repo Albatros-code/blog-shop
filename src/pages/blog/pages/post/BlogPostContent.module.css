@@ -60,3 +60,15 @@
   background-size: cover;
   margin-bottom: 1rem;
 }
+
+.imagePost {
+  display: block;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+@media screen and (max-width: 600px) {
+  .imagePost {
+    width: 100%;
+  }
+}

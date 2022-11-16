@@ -18,7 +18,7 @@ const RecentPostsSection = ({
         <Link href={`/blog/post/${post.slug}`} key={post.slug}>
             <a className={styles.listItem}>
                 <div className={styles.image}>
-                    <div style={{backgroundImage: `url(https:${post.image.url})`}}/>
+                    <div style={{backgroundImage: `url(${post.image.url})`}}/>
                 </div>    
                 <div>
                     <p className={styles.title}>{post.title}</p>

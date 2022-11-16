@@ -5,8 +5,8 @@ import styles from './Layout.module.css'
 
 interface NavLogoProps {
 }
-const NavLogo = (props: NavLogoProps) => {
 
+const NavLogo = (props: NavLogoProps) => {
 
     return (
     <div className={styles.navLogoContainer}>
@@ -14,7 +14,7 @@ const NavLogo = (props: NavLogoProps) => {
         <div className={styles.navLogoCircle}/>
         <Link href={navigation.home.link}>
             <a>
-                <img src="/logo.svg"/>
+                <img src="/base/logo.svg"/>
             </a>
         </Link>
     </div>

@@ -3,11 +3,7 @@ import React from 'react'
 import { navigation } from '../../../config'
 import Layout from '../../components/layout/Layout'
 
-interface ContactPageContentProps {
-  staticContent: {
-    imageUrl: string
-  }
-}
+interface ContactPageContentProps {}
 
 const socialContactDetails = [
   {
@@ -42,11 +38,7 @@ const socialContactDetails = [
   },
 ]
 
-const ContactPageContent = ({
-  staticContent: {
-    imageUrl
-  }
-}: ContactPageContentProps) => {
+const ContactPageContent = ({}: ContactPageContentProps) => {
   
   return (
     <Layout activeLink={navigation.contact.link}>
