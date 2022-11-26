@@ -32,9 +32,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.95em%22 font-size=%2280%22>🐱</text></svg>" />
       </Head>
       <ThemeProvider theme={theme}>
-        <ShopContextProvider>
+        {/* <ShopContextProvider> */}
           <Component {...pageProps} />
-        </ShopContextProvider>
+        {/* </ShopContextProvider> */}
       </ThemeProvider>
     </>
   )

@@ -21,7 +21,7 @@ const Layout = ({
 
     return (
         <>
-            <div className={clsx(styles.backgroundContainer)} style={{backgroundImage: `url(${bgImage})`}}/>
+            {bgImage && <div className={clsx(styles.backgroundContainer)} style={{backgroundImage: `url(${bgImage})`}}/>}
             <div className={styles.mainContainer}>
                 <div className={clsx(styles.headerContainer)}>
                     <div className={clsx(styles.headerContainerBg, bgImage && styles.headerContainerImgBg)}/>
