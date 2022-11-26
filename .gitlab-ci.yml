@@ -1,0 +1,16 @@
+stages:
+  - deploy page
+
+
+pages:
+  image: node:16.15.0
+  stage: deploy page
+  script:
+    - yarn
+    - yarn build
+    - yarn export -o public/
+  artifacts:
+    paths:
+      - public
+  when: manual
+  environment: production
