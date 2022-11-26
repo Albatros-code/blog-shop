@@ -1,7 +1,6 @@
 stages:
   - deploy page
 
-
 pages:
   image: node:16.15.0
   stage: deploy page
@@ -9,8 +8,9 @@ pages:
     - yarn
     - yarn build
     - yarn export
-    - rm -r /public
-    - cp -a /out/. /public/
+    - rm -r ./public
+    - mkdir public
+    - cp -a ./out/. /public/
   artifacts:
     paths:
       - public
