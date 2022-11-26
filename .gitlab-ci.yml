@@ -10,7 +10,7 @@ pages:
     - yarn export
     - rm -r ./public
     - mkdir public
-    - cp -a ./out/. /public/
+    - cp -a ./out/. ./public/
   artifacts:
     paths:
       - public
