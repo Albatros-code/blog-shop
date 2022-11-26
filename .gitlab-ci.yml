@@ -8,7 +8,9 @@ pages:
   script:
     - yarn
     - yarn build
-    - yarn export -o public/
+    - yarn export
+    - rm -r /public
+    - cp -a /out/. /public/
   artifacts:
     paths:
       - public
