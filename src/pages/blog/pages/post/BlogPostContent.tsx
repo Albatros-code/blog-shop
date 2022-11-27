@@ -15,7 +15,6 @@ const BlogPostContent = ({
     sideSectionDetails,
 }: BlogPostContent) => {
   const { title, content, date, description, image, tags, slug} = post
-  console.log(content)
   return (
     <BlogWrapper details={sideSectionDetails}>
     <div className={styles.container}>

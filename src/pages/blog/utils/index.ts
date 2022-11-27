@@ -15,7 +15,6 @@ export async function getPosts () {
 }
 
 async function _getPosts (): Promise<BlogPost[] | null> {
-  console.log('called!')
   const res = await fetchEntries<BlogPostEntry>({ content_type: 'blogPost' })
   if (res == null) return null
   const posts = await Promise.all(res?.map(async (p) => {
