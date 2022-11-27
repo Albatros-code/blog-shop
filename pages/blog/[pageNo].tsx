@@ -35,7 +35,6 @@ export const getStaticProps:GetStaticProps<StaticProps, {pageNo: string}> = asyn
   const { posts, sideSectionDetails } = await getSideSectionDetails()
   
   const filteredPosts = posts
-    .sort((a, b) => sortByDate(a.date, b.date))
     .slice(...pagePostsRange(page, blog.postsPerPage))
 
   return {
@@ -47,7 +46,6 @@ export const getStaticProps:GetStaticProps<StaticProps, {pageNo: string}> = asyn
   }
 }
 
-const sortByDate = (dateA: string, dateB: string) => (new Date(dateB)).getTime() - new Date(dateA).getTime()
 const pagePostsRange = (pageNo: number, postsPerPage: number) => {
   switch (pageNo) {
     case 1:

@@ -37,8 +37,11 @@ async function _getPosts (): Promise<BlogPost[] | null> {
       tags
     })
   }))
-  return posts
+  const sortedPosts = posts.sort((a, b) => sortByDate(a.date, b.date))
+  return sortedPosts
 }
+
+const sortByDate = (dateA: string, dateB: string) => new Date(dateB).getTime() - new Date(dateA).getTime()
 
 function downloadRichTextImages(postContent: Document, slug: string){
   const imageList: string[] = []
