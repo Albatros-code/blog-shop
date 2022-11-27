@@ -31,9 +31,7 @@ const PostsContainer = ({
             {posts.map((post: BlogPost) => {
               return (
                 <div key={post.title}>
-                  <Link href={`/post/${post.slug}`}>
-                      <BlogPostCard post={post}/>
-                  </Link>
+                  <BlogPostCard post={post}/>
                 </div>
               )
             })}
