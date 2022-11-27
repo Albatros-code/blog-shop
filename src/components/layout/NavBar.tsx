@@ -15,10 +15,10 @@ const NavBar = (props: NavBarProps) => {
     const [ open, setOpen ] = React.useState(false)
     const [ isAnimating, setIsAnimating ] = React.useState(false)
 
-    const bodyOverflow = React.useRef<null | string>(null)
+    // const bodyOverflow = React.useRef<null | string>(null)
     React.useEffect(() => {
-        if (bodyOverflow.current === null) bodyOverflow.current = document.body.style.overflow
-        document.body.style.overflow = open ? "hidden" : bodyOverflow.current
+        // if (bodyOverflow.current === null) bodyOverflow.current = document.body.style.overflow
+        document.body.style.overflow = open ? "hidden" : "visible"
         if (open) window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [open])
 
