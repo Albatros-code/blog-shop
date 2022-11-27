@@ -15,6 +15,13 @@ const NavBar = (props: NavBarProps) => {
     const [ open, setOpen ] = React.useState(false)
     const [ isAnimating, setIsAnimating ] = React.useState(false)
 
+    const bodyOverflow = React.useRef<null | string>(null)
+    React.useEffect(() => {
+        if (bodyOverflow.current === null) bodyOverflow.current = document.body.style.overflow
+        document.body.style.overflow = open ? "hidden" : bodyOverflow.current
+        if (open) window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [open])
+
     const handleMenuOpen = (open: boolean) => () => {
         if (isAnimating) return null
         setIsAnimating(true) 
@@ -44,7 +51,7 @@ const NavBar = (props: NavBarProps) => {
             <div className={styles.mobile}>
                 <Button icon='fa-solid fa-bars' variant='plain' onClick={handleMenuOpen(open)}/>
                 <div className={clsx(styles.mobileMenuContainer, !_open && styles.displayNone)}>
-                    <div className={clsx(styles.mobileMenuContainerBackground, styles.transition, open ? styles.visible : styles.hidden)}/>
+                    <div onClick={handleMenuOpen(open)} className={clsx(styles.mobileMenuContainerBackground, styles.transition, open ? styles.visible : styles.hidden)}/>
                     <div className={clsx(styles.mobileMenuItems, styles.transition, open ? styles.drawerDown : styles.drawerUp)}>
                         {Object.values(navigation).filter(el => el.title !== 'Home').map(nav => {
                             const isActive = activeLink === nav.link
