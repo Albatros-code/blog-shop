@@ -30,6 +30,9 @@ function Pagination({
     className
 }:PaginationProps) {
 
+    React.useEffect(() => {
+        setInputPage(page.toString())
+    }, [page])
     
     const [inputPage, setInputPage] = React.useState(page.toString())
 
