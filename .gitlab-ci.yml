@@ -23,6 +23,7 @@ azure-static-web-apps:
   variables:
     API_TOKEN: $AZURE_DEPLOYMENT_TOKEN
     APP_PATH: '$CI_PROJECT_DIR/.next'
+  when: manual
   script:
     - yarn
     - yarn build
