@@ -23,6 +23,7 @@ azure-static-web-apps:
   variables:
     API_TOKEN: $AZURE_DEPLOYMENT_TOKEN
     APP_PATH: '$CI_PROJECT_DIR'
+    ARTIFACT_PATH: '$CI_PROJECT_DIR/.next/server/pages'
   when: manual
   script:
     - echo "App deployed successfully."
