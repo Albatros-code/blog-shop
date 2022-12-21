@@ -16,3 +16,14 @@ pages:
       - public
   when: manual
   environment: production
+
+azure-static-web-apps:
+  stage: deploy page
+  image: registry.gitlab.com/static-web-apps/azure-static-web-apps-deploy
+  variables:
+    API_TOKEN: $AZURE_DEPLOYMENT_TOKEN
+  APP_PATH: '$CI_PROJECT_DIR/.next'
+  script:
+    - yarn
+    - yarn build
+    - echo "App deployed successfully."
