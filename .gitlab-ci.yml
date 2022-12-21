@@ -22,7 +22,7 @@ azure-static-web-apps:
   image: registry.gitlab.com/static-web-apps/azure-static-web-apps-deploy
   variables:
     API_TOKEN: $AZURE_DEPLOYMENT_TOKEN
-    APP_PATH: '$CI_PROJECT_DIR/src'
+    APP_PATH: '$CI_PROJECT_DIR'
   when: manual
   script:
     - echo "App deployed successfully."
